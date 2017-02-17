@@ -19,13 +19,13 @@ This project has no dependencies, so can be cloned directly from the git repo
 ### Option 1 - Clone with HTTPS
 
 ```shell
-git clone https://github.com/emeraldinspirations/lib-typedcollection.git
+git clone https://github.com/emeraldinspirations/lib-applicationArchitecture.git
 ```
 
 ### Option 2 - Clone with SSH
 
 ```shell
-git clone git@github.com:emeraldinspirations/lib-typedcollection.git
+git clone git@github.com:emeraldinspirations/lib-applicationArchitecture.git
 ```
 
 ### Option 3 - Require with Composer
@@ -38,7 +38,7 @@ Add the following lines to your `composer.json` file
         ...
         {
             "type" : "vcs",
-            "url" : "https://github.com/emeraldinspirations/lib-typedcollection.git"
+            "url" : "https://github.com/emeraldinspirations/lib-applicationArchitecture.git"
         },
         ...
     ],
