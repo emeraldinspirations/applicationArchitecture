@@ -1,0 +1,17 @@
+{
+    "name": "emeraldinspirations/lib-applicationarchitecture",
+    "description": "A PHP implementation of the Architecture design by Uncle Bob",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Matthew \"Juniper\" Barlett",
+            "email": "emeraldinspirations@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "emeraldinspirations\\applicationArchitecture\\": "src/"
+        }
+    }
+}
