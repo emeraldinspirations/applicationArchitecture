@@ -10,7 +10,8 @@ diagram of an implementation of this architecture, a sample directory
 structure, as well as the interfaces needed to implement this architecture in a
 future project.  
 
-[![Diagram](architecture.png)](architecture.png)
+[![Diagram](architecture.svg)](architecture.svg)
+[PNG Format](architecture.png)
 
 ## Installing / Getting started
 
