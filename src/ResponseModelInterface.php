@@ -2,10 +2,9 @@
 
 namespace emeraldinspirations\library\applicationArchitecture;
 
-// TODO: Move into more appropriate namespace
-
-interface ResponseModelInterface  extends \ArrayAccess
+interface ResponseModelInterface extends \GenericAssocArrayInterface
 {
+
     function withData(ResponseDataInterface $Data) : ResponseModelInterface;
 
 }
