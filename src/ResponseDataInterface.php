@@ -2,7 +2,7 @@
 
 namespace emeraldinspirations\library\applicationArchitecture;
 
-interface ResponseDataInterface extends \GenericAssocArrayInterface
+interface ResponseDataInterface extends GenericAssocArrayInterface
 {
 
 }

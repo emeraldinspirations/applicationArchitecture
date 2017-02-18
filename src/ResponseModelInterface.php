@@ -2,7 +2,7 @@
 
 namespace emeraldinspirations\library\applicationArchitecture;
 
-interface ResponseModelInterface extends \GenericAssocArrayInterface
+interface ResponseModelInterface extends GenericAssocArrayInterface
 {
 
     function withData(ResponseDataInterface $Data) : ResponseModelInterface;

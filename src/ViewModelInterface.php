@@ -2,7 +2,7 @@
 
 namespace emeraldinspirations\library\applicationArchitecture;
 
-interface ViewModelInterface extends \GenericAssocArrayInterface
+interface ViewModelInterface extends GenericAssocArrayInterface
 {
-    
+
 }
