@@ -106,4 +106,22 @@ class AssocStringTree implements AssocStringTreeInterface
             : false;
     }
 
+    /**
+     * Convert all child AssocStringTreeInterface objects to array
+     *
+     * @return array
+     */
+    public function toArray() : array
+    {
+        $Return = [];
+        foreach ($this->ImmutableAssocArray as $Key => $Value) {
+            if ($Value instanceof AssocStringTreeInterface) {
+                $Return[$Key] = $Value->toArray();
+            } else {
+                $Return[$Key] = $Value;
+            }
+        }
+        return $Return;
+    }
+
 }

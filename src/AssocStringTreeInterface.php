@@ -24,7 +24,7 @@ namespace emeraldinspirations\library\applicationArchitecture;
  * AssocStringTree.
  *
  * Unfortunately, there is no way in PHP 7 to provide a type-hint of more than
- * one type (ex: node/container).  So this interface is unable to enforce this 
+ * one type (ex: node/container).  So this interface is unable to enforce this
  * requirement.
  *
  * @category Library
@@ -72,4 +72,11 @@ interface AssocStringTreeInterface extends GenericAssocArrayInterface
      * @return bool The value matches type AssocStringTreeInterface
      */
     function offsetIsTree(string $Key) : bool;
+
+    /**
+     * Convert this class and all child AssocStringTreeInterface into array
+     *
+     * @return array
+     */
+    function toArray() : array;
 }

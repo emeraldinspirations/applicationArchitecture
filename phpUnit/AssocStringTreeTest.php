@@ -126,9 +126,9 @@ class AssocStringTreeTest extends \PHPUnit_Framework_TestCase
 
         $this->object = new AssocStringTree($TestData1);
 
-        $this->assertEquals(
-            $TestData1,
-            $this->object->toArray(),
+        $this->assertSame(
+            $TestData1[self::KEY_OBJECT],
+            $this->object[self::KEY_OBJECT],
             'Fails if unable to pass array as constructor'
         );
     }
@@ -319,6 +319,30 @@ class AssocStringTreeTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(
             $this->object->offsetIsTree((string) microtime()),
             'Fails if function errors when index not found'
+        );
+    }
+
+    /**
+     * Verifies that the toArray function is overridden to explode child
+     * AssocStringTreeInterface objects.
+     *
+     * @return void
+     */
+    public function testToArray()
+    {
+
+        $TestData1 = $this->getTestData();
+
+        $this->object = new AssocStringTree($TestData1);
+
+        $this->assertEquals(
+            [
+                self::KEY_STRING=>$TestData1[self::KEY_STRING],
+                self::KEY_OBJECT=>[]
+            ],
+            $this->object->toArray(),
+            'Fails if function does not explode child AssocStringTreeInterface'
+            .' objects.'
         );
     }
 }
