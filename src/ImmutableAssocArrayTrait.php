@@ -11,7 +11,21 @@ trait ImmutableAssocArrayTrait
         return isset($this->ImmutableAssocArray[$Offset]);
     }
 
-    public function offsetGet($Offset) {
+    /**
+     * Returns the value at the requested index
+     *
+     * @param string|integer $Offset The index requested
+     *
+     * @return mixed The value at that index
+     */
+    public function offsetGet($Offset)
+    {
+        if (!isset($this->ImmutableAssocArray[$Offset])) {
+            throw new \OutOfBoundsException(
+                'Unable to locate index "'.$Offset.'"',
+                1487838058
+            );
+        }
         return $this->ImmutableAssocArray[$Offset];
     }
 

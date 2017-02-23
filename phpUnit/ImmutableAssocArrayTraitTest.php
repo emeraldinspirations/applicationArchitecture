@@ -52,13 +52,26 @@ class ImmutableAssocArrayTraitTest extends \PHPUnit_Framework_TestCase
     }
 
 
-    public function testOffsetGet()
+    public function testOffsetGetPass()
     {
         $this->assertEquals(
             $this->Array[self::KEY1],
             $this->object[self::KEY1],
             'Fails when offsetGet does not return the correct value'
         );
+    }
+
+    /**
+     * Verifies offsetGet throws an exception when an invalid index is passed
+     *
+     * @expectedException     \OutOfBoundsException
+     * @expectedExceptionCode 1487838058
+     *
+     * @return void
+     */
+    public function testOffsetGetFailInvalidIndex()
+    {
+        $this->object->offsetGet((string) microtime());
     }
 
     public function testIsSet()
