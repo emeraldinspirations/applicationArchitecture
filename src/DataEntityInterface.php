@@ -41,12 +41,12 @@ interface DataEntityInterface
      *
      * PHP does not yet allow static functions in interfaces.  If it did, this
      * function would be fromAssocArray.  "With" follows the immutable model
-     * and is the closest implementation that can be done in an interface. 
+     * and is the closest implementation that can be done in an interface.
      *
      * @param AssocStringTreeInterface $Data Data to populate new entity
      *
      * @return self New data entity
      */
-    function withAssocArray($Data AssocStringTreeInterface) : self;
+    function withAssocArray(AssocStringTreeInterface $Data) : self;
 
 }
