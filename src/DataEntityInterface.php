@@ -28,5 +28,25 @@ namespace emeraldinspirations\library\applicationArchitecture;
  */
 interface DataEntityInterface
 {
+
+    /**
+     * Extract data into associative array
+     *
+     * @return AssocStringTreeInterface
+     */
     function toAssocArray() : AssocStringTreeInterface;
+
+    /**
+     * Create new entity with data from associative array
+     *
+     * PHP does not yet allow static functions in interfaces.  If it did, this
+     * function would be fromAssocArray.  "With" follows the immutable model
+     * and is the closest implementation that can be done in an interface. 
+     *
+     * @param AssocStringTreeInterface $Data Data to populate new entity
+     *
+     * @return self New data entity
+     */
+    function withAssocArray($Data AssocStringTreeInterface) : self;
+
 }
