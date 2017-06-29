@@ -2,7 +2,8 @@
 
 namespace emeraldinspirations\library\applicationArchitecture;
 
-interface RequestModelInterface extends GenericAssocArrayInterface
+interface RequestModelInterface
 {
+    // extends GenericAssocArrayInterface
 
 }
