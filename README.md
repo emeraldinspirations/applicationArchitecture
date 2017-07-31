@@ -11,50 +11,22 @@ structure, as well as the interfaces needed to implement this architecture in a
 future project.  
 
 [![Diagram](architecture.svg)](architecture.svg)
-[PNG Format](architecture.png)
+[![PNG Format](architecture.png)](architecture.png)
 
 ## Installing / Getting started
 
 This project has no dependencies, so can be cloned directly from the git repo
 
-### Option 1 - Clone with HTTPS
+### Require with Composer
 
 ```shell
-git clone https://github.com/emeraldinspirations/lib-applicationArchitecture.git
-```
-
-### Option 2 - Clone with SSH
-
-```shell
-git clone git@github.com:emeraldinspirations/lib-applicationArchitecture.git
-```
-
-### Option 3 - Require with Composer
-
-Add the following lines to your `composer.json` file
-
-```json
-    ...
-    "repositories" : [
-        ...
-        {
-            "type" : "vcs",
-            "url" : "https://github.com/emeraldinspirations/lib-applicationArchitecture.git"
-        },
-        ...
-    ],
-    "require": {
-        ...
-        "emeraldinspirations/lib-applicationarchitecture":"*",
-        ...
-    },
-    ...
+composer require emeraldinspirations/lib-applicationarchitecture
 ```
 
 ## Documentation
 Further documentation is available thanks to [phpDocumentor2](https://www.phpdoc.org/) and [PHPDocumentor Markdown generator](https://github.com/evert/phpdoc-md):
 
-- [Documentation](phpdoc/md/ApiIndex.md)
+- [Documentation](phpdoc/md/ApiIndex.md) (Not yet generated)
 
 ## Contributing
 

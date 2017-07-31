@@ -2,6 +2,7 @@
     "name": "emeraldinspirations/lib-applicationarchitecture",
     "description": "A PHP implementation of the Architecture design by Uncle Bob",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Matthew \"Juniper\" Barlett",
