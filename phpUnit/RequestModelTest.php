@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Container for Request Model
+ * Container for Request Model unit tests
  *
  * PHP Version 7
  *
@@ -14,21 +14,11 @@
  */
 
 namespace emeraldinspirations\library\applicationArchitecture;
+use emeraldinspirations\library\applicationArchitecture\RequestModelInterface;
+// use emeraldinspirations\library\applicationArchitecture\RequestModelInterface;
 
 /**
- * The request data from CLI or HTTP request
- *
- * A Request Model is an object containing all the information about the
- * HTTP or CLI request.  The Request Model is then passed through several
- * stages:
- * * The respective Common Entry Point (cep) script creates the inital Request
- *   Object and populates the Boundry property
- * * The config script populates the various settings and entity gateways
- * * A Request Parser populates the details of the request
- *
- * At each stage above a new derived immutable object is created including the
- * additinal data.  Once fully populated, the Request Model is then used as a
- * parameter of the __invoke() function of the requested Interactor
+ * Request Model unit tests
  *
  * @category  Library
  * @package   ApplicationArchitecture
@@ -38,7 +28,30 @@ namespace emeraldinspirations\library\applicationArchitecture;
  * @version   GIT: $Id:$ In Development.
  * @link      http://github.com/emeraldinspirations/lib-applicationArchitecture
  */
-interface RequestModelInterface
+class RequestModelTest extends \PHPUnit_Framework_TestCase
 {
+
+    /**
+     * Verify object constructs
+     *
+     * @return void
+     */
+    public function testConstruct()
+    {
+        $object = new RequestModel();
+
+        $this->assertInstanceOf(
+            RequestModel::class,
+            $object,
+            'Fails if class doesn\'t exist'
+        );
+
+        $this->assertInstanceOf(
+            RequestModelInterface::class,
+            $object,
+            'Fails if class doesn\'t implement ResponseModelInterface'
+        );
+
+    }
 
 }

@@ -38,7 +38,16 @@ namespace emeraldinspirations\library\applicationArchitecture;
  * @version   GIT: $Id:$ In Development.
  * @link      http://github.com/emeraldinspirations/lib-applicationArchitecture
  */
-interface RequestModelInterface
+class RequestModel implements RequestModelInterface
 {
+
+    /**
+     * Build a new request model object
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+    }
 
 }
