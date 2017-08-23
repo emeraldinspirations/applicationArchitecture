@@ -26,6 +26,24 @@ namespace emeraldinspirations\library\applicationArchitecture;
  */
 class ImmutableArrayObjectTest extends \PHPUnit_Framework_TestCase
 {
+    protected $Object;
+    const KEY_MAINTAINED = 'KeyMaintained';
+    const KEY_CHANGED    = 'KeyChanged';
+
+    /**
+     * Set up before each test is run
+     *
+     * @return void
+     */
+    public function setUp()
+    {
+        $this->Object = new ImmutableArrayObject(
+            [
+                self::KEY_MAINTAINED => 'ValueMaintained',
+                self::KEY_CHANGED    => 'OriginalValue',
+            ]
+        );
+    }
 
     /**
      * Verify new object is constructable and extends \ArrayObject
@@ -35,17 +53,15 @@ class ImmutableArrayObjectTest extends \PHPUnit_Framework_TestCase
     public function testConstruct()
     {
 
-        $Object = new ImmutableArrayObject([]);
-
         $this->assertInstanceOf(
             ImmutableArrayObject::class,
-            $Object,
+            $this->Object,
             'Fails if class missing or not created'
         );
 
         $this->assertInstanceOf(
             \ArrayObject::class,
-            $Object,
+            $this->Object,
             'Fails if class does not extend ArrayObject'
         );
 
@@ -58,17 +74,11 @@ class ImmutableArrayObjectTest extends \PHPUnit_Framework_TestCase
      */
     public function testWithOffsetSet()
     {
-        $KeyChanged    = 'KeyChanged';
-        $KeyMaintained = 'KeyMaintained';
         $ValueUpdated  = 'NewValue';
-        $Object        = new ImmutableArrayObject(
-            [
-                $KeyMaintained=>'ValueMaintained',
-                $KeyChanged=>'OriginalValue',
-            ]
-        );
 
-        $ObjectClone = $Object->withOffsetSet($KeyChanged, $ValueUpdated);
+        $ObjectClone = $this->Object->withOffsetSet(
+            self::KEY_CHANGED, $ValueUpdated
+        );
         // Fails if function not defined
 
         $this->assertInstanceOf(
@@ -78,19 +88,19 @@ class ImmutableArrayObjectTest extends \PHPUnit_Framework_TestCase
         );
 
         $this->assertTrue(
-            $ObjectClone->offsetExists($KeyMaintained),
+            $ObjectClone->offsetExists(self::KEY_MAINTAINED),
             'Fails if data not maintained'
         );
 
         $this->assertNotSame(
-            $Object,
+            $this->Object,
             $ObjectClone,
             'Fails if object not cloned'
         );
 
         $this->assertEquals(
             $ValueUpdated,
-            $ObjectClone->offsetGet($KeyChanged),
+            $ObjectClone->offsetGet(self::KEY_CHANGED),
             'Fails if offset not updated'
         );
 
@@ -104,16 +114,7 @@ class ImmutableArrayObjectTest extends \PHPUnit_Framework_TestCase
      */
     public function testWithOffsetUnset()
     {
-        $KeyChanged    = 'KeyChanged';
-        $KeyMaintained = 'KeyMaintained';
-        $Object        = new ImmutableArrayObject(
-            [
-                $KeyMaintained=>'ValueMaintained',
-                $KeyChanged=>'OriginalValue',
-            ]
-        );
-
-        $ObjectClone = $Object->withOffsetUnset($KeyChanged);
+        $ObjectClone = $this->Object->withOffsetUnset(self::KEY_CHANGED);
         // Fails if function not defined
 
         $this->assertInstanceOf(
@@ -123,23 +124,50 @@ class ImmutableArrayObjectTest extends \PHPUnit_Framework_TestCase
         );
 
         $this->assertTrue(
-            $ObjectClone->offsetExists($KeyMaintained),
+            $ObjectClone->offsetExists(self::KEY_MAINTAINED),
             'Fails if data not maintained'
         );
 
         $this->assertNotSame(
-            $Object,
+            $this->Object,
             $ObjectClone,
             'Fails if object not cloned'
         );
 
         $this->assertFalse(
-            $ObjectClone->offsetExists($KeyChanged),
+            $ObjectClone->offsetExists(self::KEY_CHANGED),
             'Fails if offset not removed'
         );
 
     }
 
+    /**
+     * Verify offsetSet throws exception
+     *
+     * @expectedException     \LogicException
+     * @expectedExceptionCode 1487415175
+     *
+     * @return void
+     */
+    public function testIsReadOnly1()
+    {
+        $this->Object[self::KEY_CHANGED] = 'NewValue';
 
+    }
+
+    /**
+     * Verify offsetUnset throws exception
+     *
+     * @expectedException     \LogicException
+     * @expectedExceptionCode 1487415510
+     *
+     * @return void
+     */
+    public function testIsReadOnly2()
+    {
+
+        unset($this->Object[self::KEY_CHANGED]);
+
+    }
 
 }

@@ -28,6 +28,58 @@ class ImmutableArrayObject extends \ArrayObject
 {
 
     /**
+     * Override offsetSet to throw exception, array is immutable
+     *
+     * This function violates the Liskov substitution principle because PHP
+     * currently does not have an Immutable version of `\ArrayObject` or the
+     * `\ArrayAccess` interface.  It is a language construct that using
+     * `ArrayObject[Offset] = Value` requires implementation of
+     * `\ArrayAccess`.  Therefore, this function is a "hack" until PHP
+     * implements a respective class.
+     *
+     * Also, `\ArrayAccess` is pre PHP 7 and does not use type hinting.
+     *
+     * @param string $Offset The key to be updated
+     * @param mixed  $Value  The value to set it to
+     *
+     * @see \ArrayObject::offsetSet Overriden function
+     *
+     * @return void
+     */
+    public function offsetSet($Offset, $Value)
+    {
+        throw new \LogicException(
+            'Unable to write to an immutable array, use withOffsetSet',
+            1487415175
+        );
+    }
+
+    /**
+     * Override offsetUnset to throw exception, array is immutable
+     *
+     * This function violates the Liskov substitution principle because PHP
+     * currently does not have an Immutable version of `\ArrayObject` or the
+     * `\ArrayAccess` interface.  It is a language construct that using
+     * `unset()` requires implementation of `\ArrayAccess`.  Therefore, this
+     * function is a "hack" until PHP implements a respective class.
+     *
+     * Also, `\ArrayAccess` is pre PHP 7 and does not use type hinting.
+     *
+     * @param string $Offset The key to be removed
+     *
+     * @see \ArrayObject::offsetUnset Overriden function
+     *
+     * @return void
+     */
+    public function offsetUnset($Offset)
+    {
+        throw new \LogicException(
+            'Unable to remove from an immutable array, use withOffsetUnset',
+            1487415510
+        );
+    }
+
+    /**
      * Return clone with offset set (immutable version of offsetSet)
      *
      * @param string $Offset The key to be updated
@@ -39,9 +91,9 @@ class ImmutableArrayObject extends \ArrayObject
      */
     public function withOffsetSet(string $Offset, $Value) : self
     {
-        $Return = clone $this;
-        $Return->offsetSet($Offset, $Value);
-        return $Return;
+        $Return = $this->getArrayCopy();
+        $Return[$Offset] = $Value;
+        return new self($Return);
     }
 
     /**
@@ -55,9 +107,9 @@ class ImmutableArrayObject extends \ArrayObject
      */
     public function withOffsetUnset(string $Offset) : self
     {
-        $Return = clone $this;
-        $Return->offsetUnset($Offset);
-        return $Return;
+        $Return = $this->getArrayCopy();
+        unset($Return[$Offset]);
+        return new self($Return);
     }
 
 }
