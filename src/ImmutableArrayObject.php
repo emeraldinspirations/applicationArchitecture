@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * Containter for Immutable ArrayObject
@@ -41,6 +41,22 @@ class ImmutableArrayObject extends \ArrayObject
     {
         $Return = clone $this;
         $Return->offsetSet($Offset, $Value);
+        return $Return;
+    }
+
+    /**
+     * Return clone with offset unset (immutable version of offsetUnset)
+     *
+     * @param string $Offset The key to be removed
+     *
+     * @see \ArrayObject::offsetUnset
+     *
+     * @return self The updated clone
+     */
+    public function withOffsetUnset(string $Offset) : self
+    {
+        $Return = clone $this;
+        $Return->offsetUnset($Offset);
         return $Return;
     }
 
