@@ -27,4 +27,21 @@ namespace emeraldinspirations\library\applicationArchitecture;
 class ImmutableArrayObject extends \ArrayObject
 {
 
+    /**
+     * Return clone with offset set (immutable version of offsetSet)
+     *
+     * @param string $Offset The key to be updated
+     * @param mixed  $Value  The value to set it to
+     *
+     * @see \ArrayObject::offsetSet
+     *
+     * @return self The updated clone
+     */
+    public function withOffsetSet(string $Offset, $Value) : self
+    {
+        $Return = clone $this;
+        $Return->offsetSet($Offset, $Value);
+        return $Return;
+    }
+
 }

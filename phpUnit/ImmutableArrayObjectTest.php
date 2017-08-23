@@ -51,4 +51,49 @@ class ImmutableArrayObjectTest extends \PHPUnit_Framework_TestCase
 
     }
 
+    /**
+     * Verify offset is settable through WITH function (immutable pattern)
+     *
+     * @return void
+     */
+    public function testWithOffsetSet()
+    {
+        $KeyChanged    = 'KeyChanged';
+        $KeyMaintained = 'KeyMaintained';
+        $ValueUpdated  = 'NewValue';
+        $Object        = new ImmutableArrayObject(
+            [
+                $KeyMaintained=>'ValueMaintained',
+                $KeyChanged=>'OriginalValue',
+            ]
+        );
+
+        $ObjectClone = $Object->withOffsetSet($KeyChanged, $ValueUpdated);
+        // Fails if function not defined
+
+        $this->assertInstanceOf(
+            ImmutableArrayObject::class,
+            $ObjectClone,
+            'Fails if non ImmutableArrayObject returned'
+        );
+
+        $this->assertTrue(
+            $ObjectClone->offsetExists($KeyMaintained),
+            'Fails if data not maintained'
+        );
+
+        $this->assertNotSame(
+            $Object,
+            $ObjectClone,
+            'Fails if object not cloned'
+        );
+
+        $this->assertEquals(
+            $ValueUpdated,
+            $ObjectClone->offsetGet($KeyChanged),
+            'Fails if offset not updated'
+        );
+
+    }
+
 }
