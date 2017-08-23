@@ -16,12 +16,13 @@
 namespace emeraldinspirations\library\applicationArchitecture;
 
 /**
- * Interactor
+ * Interactor interface
  *
  * An interactor is an action taken by the application.  Interactors accept as
- * constructors an object implementing RequestModelInterface, and an object
- * implementing EntityGatewayInterface.  The Interactor then returns an object
- * implementing ResponseModelInterface.
+ * constructors the necessary EntityGatewayInterface objects.  Once
+ * constructed, the interactor is invoked by passing a
+ * RequestModelInterface.  The interactor performs the specified action and
+ * returns a ResponseModelInterface.
  *
  * @category  Library
  * @package   ApplicationArchitecture
@@ -33,24 +34,16 @@ namespace emeraldinspirations\library\applicationArchitecture;
  */
 interface InteractorInterface
 {
-    /**
-     * Return Request Model
-     *
-     * @return return RequestModelInterface
-     */
-    function getRequestModel() : RequestModelInterface;
 
     /**
-     * Return Entity Gateway
+     * Preform the required action, then return a ResponseModelInterface
      *
-     * @return return EntityGatewayInterface
-     */
-    function getEntityGateway() : EntityGatewayInterface;
-
-    /**
-     * Return Response Model
+     * @param RequestModelInterface The parameters for the requested action
      *
      * @return return ResponseModelInterface
      */
-    function getResponseModel() : ResponseModelInterface;
+    function __invoke(
+        RequestModelInterface $RequestModel
+    ) : ResponseModelInterface;
+    
 }

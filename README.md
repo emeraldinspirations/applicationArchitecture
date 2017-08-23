@@ -26,7 +26,7 @@ composer require emeraldinspirations/lib-applicationarchitecture
 ## Documentation
 Further documentation is available thanks to [phpDocumentor2](https://www.phpdoc.org/) and [PHPDocumentor Markdown generator](https://github.com/evert/phpdoc-md):
 
-- [Documentation](phpdoc/md/ApiIndex.md) (Not yet generated)
+- [Documentation](phpDoc/md/ApiIndex.md)
 
 ## Contributing
 

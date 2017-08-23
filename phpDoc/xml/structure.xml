@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="API Documentation" version="2.9.1">
+  <partials/>
+  <file path="ArrayInterface.php" generated-path="ArrayInterface.html" hash="ff8cded5ef7a676fcedd637034993c9a" package="ApplicationArchitecture">
+    <docblock line="0">
+      <description>Containter for Array interface</description>
+      <long-description>PHP Version 7</long-description>
+      <tag name="category" line="0" description="Library"/>
+      <tag name="package" line="0" description="ApplicationArchitecture"/>
+      <tag name="author" line="0" description="Matthew &quot;Juniper&quot; Barlett" link="mailto:emeraldinspirations@gmail.com"/>
+      <tag name="copyright" line="0" description="2017 Matthew &quot;Juniper&quot; Barlett &lt;emeraldinspirations@gmail.com&gt;"/>
+      <tag name="license" line="0" description="MIT ../LICENSE"/>
+      <tag name="link" line="0" description="http://github.com/emeraldinspirations/lib-applicationArchitecture" link="http://github.com/emeraldinspirations/lib-applicationArchitecture"/>
+    </docblock>
+    <interface namespace="emeraldinspirations\library\applicationArchitecture" line="36" package="ApplicationArchitecture">
+      <extends>\IteratorAggregate</extends>
+      <extends>\Countable</extends>
+      <extends>\ArrayAccess</extends>
+      <name>ArrayInterface</name>
+      <full_name>\emeraldinspirations\library\applicationArchitecture\ArrayInterface</full_name>
+      <docblock line="36">
+        <description>Array interface</description>
+        <long-description>In order to use `for` ... `each`, `count`, or `ArrayObject[Offset]` in PHP
+an object must implement `\IteratorAggregate` (which covers `\Traversable`),
+`\Countable`, and `\ArrayAccess` respectively.  This interface condenses
+these requirements into 1 implements statement.
+
+The \ArrayObject class also implements \Serializable, however there is no
+need to implement this in this interface as it is not used in
+emeraldinspirations/lib-applicationarchitecture</long-description>
+        <tag name="category" line="36" description="Library"/>
+        <tag name="package" line="36" description="ApplicationArchitecture"/>
+        <tag name="author" line="36" description="Matthew &quot;Juniper&quot; Barlett" link="mailto:emeraldinspirations@gmail.com"/>
+        <tag name="license" line="36" description="MIT ../LICENSE"/>
+        <tag name="version" line="36" description="GIT: $Id$ In Development."/>
+        <tag name="link" line="36" description="https://github.com/emeraldinspirations/lib-applicationArchitecture" link="https://github.com/emeraldinspirations/lib-applicationArchitecture"/>
+      </docblock>
+    </interface>
+  </file>
+  <file path="ResponseModelInterface.php" generated-path="ResponseModelInterface.html" hash="a68b748f2eb2606f770cdaf2fa3416de" package="ApplicationArchitecture">
+    <docblock line="0">
+      <description>Container for Response Model</description>
+      <long-description>PHP Version 7</long-description>
+      <tag name="category" line="0" description="Library"/>
+      <tag name="package" line="0" description="ApplicationArchitecture"/>
+      <tag name="author" line="0" description="Matthew &quot;Juniper&quot; Barlett" link="mailto:emeraldinspirations@gmail.com"/>
+      <tag name="copyright" line="0" description="2017 Matthew &quot;Juniper&quot; Barlett &lt;emeraldinspirations@gmail.com&gt;"/>
+      <tag name="license" line="0" description="MIT ../LICENSE"/>
+      <tag name="link" line="0" description="http://github.com/emeraldinspirations/lib-applicationArchitecture" link="http://github.com/emeraldinspirations/lib-applicationArchitecture"/>
+    </docblock>
+    <interface namespace="emeraldinspirations\library\applicationArchitecture" line="35" package="ApplicationArchitecture">
+      <extends>\emeraldinspirations\library\applicationArchitecture\ArrayInterface</extends>
+      <name>ResponseModelInterface</name>
+      <full_name>\emeraldinspirations\library\applicationArchitecture\ResponseModelInterface</full_name>
+      <docblock line="35">
+        <description>The response from application</description>
+        <long-description>A Response Model is an array object containing the response from the
+application.  It is "delivery mechanism agnostic" i.e. it is not specific to
+the web or the command line or whatever interface is being used.  It is also
+locale and language agnostic, containing value objects that are later
+converted into human-readable information.</long-description>
+        <tag name="category" line="35" description="Library"/>
+        <tag name="package" line="35" description="ApplicationArchitecture"/>
+        <tag name="author" line="35" description="Matthew &quot;Juniper&quot; Barlett" link="mailto:emeraldinspirations@gmail.com"/>
+        <tag name="copyright" line="35" description="2017 Matthew &quot;Juniper&quot; Barlett &lt;emeraldinspirations@gmail.com&gt;"/>
+        <tag name="license" line="35" description="MIT ../LICENSE"/>
+        <tag name="version" line="35" description="GIT: $Id:$ In Development."/>
+        <tag name="link" line="35" description="http://github.com/emeraldinspirations/lib-applicationArchitecture" link="http://github.com/emeraldinspirations/lib-applicationArchitecture"/>
+        <tag name="inherited_from" description="\emeraldinspirations\library\applicationArchitecture\ArrayInterface" refers="\emeraldinspirations\library\applicationArchitecture\ArrayInterface" link="/classes/emeraldinspirations.library.applicationArchitecture.ArrayInterface.html"/>
+      </docblock>
+    </interface>
+  </file>
+  <file path="InteractorInterface.php" generated-path="InteractorInterface.html" hash="3961525b6f2e22865d293a73eb71ff07" package="ApplicationArchitecture">
+    <docblock line="0">
+      <description>Container for InteractorInterface</description>
+      <long-description>PHP Version 7</long-description>
+      <tag name="category" line="0" description="Library"/>
+      <tag name="package" line="0" description="ApplicationArchitecture"/>
+      <tag name="author" line="0" description="Matthew &quot;Juniper&quot; Barlett" link="mailto:emeraldinspirations@gmail.com"/>
+      <tag name="copyright" line="0" description="2017 Matthew &quot;Juniper&quot; Barlett &lt;emeraldinspirations@gmail.com&gt;"/>
+      <tag name="license" line="0" description="MIT ../LICENSE"/>
+      <tag name="link" line="0" description="http://github.com/emeraldinspirations/lib-applicationArchitecture" link="http://github.com/emeraldinspirations/lib-applicationArchitecture"/>
+    </docblock>
+    <interface namespace="emeraldinspirations\library\applicationArchitecture" line="35" package="ApplicationArchitecture">
+      <name>InteractorInterface</name>
+      <full_name>\emeraldinspirations\library\applicationArchitecture\InteractorInterface</full_name>
+      <docblock line="35">
+        <description>Interactor interface</description>
+        <long-description>An interactor is an action taken by the application.  Interactors accept as
+constructors the necessary EntityGatewayInterface objects.  Once
+constructed, the interactor is invoked by passing a
+RequestModelInterface.  The interactor performs the specified action and
+returns a ResponseModelInterface.</long-description>
+        <tag name="category" line="35" description="Library"/>
+        <tag name="package" line="35" description="ApplicationArchitecture"/>
+        <tag name="author" line="35" description="Matthew &quot;Juniper&quot; Barlett" link="mailto:emeraldinspirations@gmail.com"/>
+        <tag name="copyright" line="35" description="2017 Matthew &quot;Juniper&quot; Barlett &lt;emeraldinspirations@gmail.com&gt;"/>
+        <tag name="license" line="35" description="MIT ../LICENSE"/>
+        <tag name="version" line="35" description="GIT: $Id:$ In Development."/>
+        <tag name="link" line="35" description="http://github.com/emeraldinspirations/lib-applicationArchitecture" link="http://github.com/emeraldinspirations/lib-applicationArchitecture"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="emeraldinspirations\library\applicationArchitecture" line="45" package="ApplicationArchitecture">
+        <name>__invoke</name>
+        <full_name>\emeraldinspirations\library\applicationArchitecture\InteractorInterface::__invoke()</full_name>
+        <docblock line="45">
+          <description>Preform the required action, then return a ResponseModelInterface</description>
+          <long-description></long-description>
+          <tag name="param" line="45" description="&lt;p&gt;The parameters for the requested action&lt;/p&gt;" type="\emeraldinspirations\library\applicationArchitecture\RequestModelInterface" variable="$RequestModel">
+            <type>\emeraldinspirations\library\applicationArchitecture\RequestModelInterface</type>
+          </tag>
+          <tag name="return" line="45" description="ResponseModelInterface" type="\emeraldinspirations\library\applicationArchitecture\return">
+            <type>\emeraldinspirations\library\applicationArchitecture\return</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$RequestModel</name>
+          <default></default>
+          <type>\emeraldinspirations\library\applicationArchitecture\RequestModelInterface</type>
+        </argument>
+      </method>
+    </interface>
+  </file>
+  <file path="EntityGatewayInterface.php" generated-path="EntityGatewayInterface.html" hash="674a3cdd407ce89ebc7b64d281217714" package="ApplicationArchitecture">
+    <docblock line="0">
+      <description>Container for EntityGatewayInterface</description>
+      <long-description>PHP Version 7</long-description>
+      <tag name="category" line="0" description="Library"/>
+      <tag name="package" line="0" description="ApplicationArchitecture"/>
+      <tag name="author" line="0" description="Matthew &quot;Juniper&quot; Barlett" link="mailto:emeraldinspirations@gmail.com"/>
+      <tag name="copyright" line="0" description="2017 Matthew &quot;Juniper&quot; Barlett &lt;emeraldinspirations@gmail.com&gt;"/>
+      <tag name="license" line="0" description="MIT ../LICENSE"/>
+      <tag name="link" line="0" description="http://github.com/emeraldinspirations/lib-applicationArchitecture" link="http://github.com/emeraldinspirations/lib-applicationArchitecture"/>
+    </docblock>
+    <interface namespace="emeraldinspirations\library\applicationArchitecture" line="32" package="ApplicationArchitecture">
+      <name>EntityGatewayInterface</name>
+      <full_name>\emeraldinspirations\library\applicationArchitecture\EntityGatewayInterface</full_name>
+      <docblock line="32">
+        <description>Entity Gateway</description>
+        <long-description>An Entity Gateway is an object that has functions that interact with data
+storage.</long-description>
+        <tag name="category" line="32" description="Library"/>
+        <tag name="package" line="32" description="ApplicationArchitecture"/>
+        <tag name="author" line="32" description="Matthew &quot;Juniper&quot; Barlett" link="mailto:emeraldinspirations@gmail.com"/>
+        <tag name="copyright" line="32" description="2017 Matthew &quot;Juniper&quot; Barlett &lt;emeraldinspirations@gmail.com&gt;"/>
+        <tag name="license" line="32" description="MIT ../LICENSE"/>
+        <tag name="version" line="32" description="GIT: $Id:$ In Development."/>
+        <tag name="link" line="32" description="http://github.com/emeraldinspirations/lib-applicationArchitecture" link="http://github.com/emeraldinspirations/lib-applicationArchitecture"/>
+      </docblock>
+    </interface>
+  </file>
+  <file path="ImmutableArrayObject.php" generated-path="ImmutableArrayObject.html" hash="a985336b1ca41a771835cd18cbe6a291" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="emeraldinspirations\library\applicationArchitecture" line="27" package="ApplicationArchitecture">
+      <extends/>
+      <implements>\emeraldinspirations\library\applicationArchitecture\ArrayInterface</implements>
+      <name>ImmutableArrayObject</name>
+      <full_name>\emeraldinspirations\library\applicationArchitecture\ImmutableArrayObject</full_name>
+      <docblock line="27">
+        <description>Immutable ArrayObject</description>
+        <long-description></long-description>
+        <tag name="category" line="27" description="Library"/>
+        <tag name="package" line="27" description="ApplicationArchitecture"/>
+        <tag name="author" line="27" description="Matthew &quot;Juniper&quot; Barlett" link="mailto:emeraldinspirations@gmail.com"/>
+        <tag name="license" line="27" description="MIT ../LICENSE"/>
+        <tag name="version" line="27" description="GIT: $Id$ In Development."/>
+        <tag name="link" line="27" description="https://github.com/emeraldinspirations/lib-applicationArchitecture" link="https://github.com/emeraldinspirations/lib-applicationArchitecture"/>
+      </docblock>
+      <property static="false" visibility="protected" namespace="emeraldinspirations\library\applicationArchitecture" line="30" package="ApplicationArchitecture">
+        <name>$ArrayObject</name>
+        <full_name>\emeraldinspirations\library\applicationArchitecture\ImmutableArrayObject::$ArrayObject</full_name>
+        <default></default>
+        <docblock line="30">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="emeraldinspirations\library\applicationArchitecture" line="51" package="ApplicationArchitecture">
+        <name>offsetSet</name>
+        <full_name>\emeraldinspirations\library\applicationArchitecture\ImmutableArrayObject::offsetSet()</full_name>
+        <docblock line="51">
+          <description>Override offsetSet to throw exception, array is immutable</description>
+          <long-description>This function violates the Liskov substitution principle because PHP
+currently does not have an Immutable version of `\ArrayObject` or the
+`\ArrayAccess` interface.  It is a language construct that using
+`ArrayObject[Offset] = Value` requires implementation of
+`\ArrayAccess`.  Therefore, this function is a "hack" until PHP
+implements a respective class.
+
+Also, `\ArrayAccess` is pre PHP 7 and does not use type hinting.</long-description>
+          <tag name="param" line="51" description="&lt;p&gt;The key to be updated&lt;/p&gt;" type="string" variable="$Offset">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="51" description="&lt;p&gt;The value to set it to&lt;/p&gt;" type="mixed" variable="$Value">
+            <type>mixed</type>
+          </tag>
+          <tag name="see" line="51" description="Overriden function" link="\ArrayObject::offsetSet"/>
+          <tag name="return" line="51" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$Offset</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$Value</name>
+          <default></default>
+          <type>mixed</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="emeraldinspirations\library\applicationArchitecture" line="76" package="ApplicationArchitecture">
+        <name>offsetUnset</name>
+        <full_name>\emeraldinspirations\library\applicationArchitecture\ImmutableArrayObject::offsetUnset()</full_name>
+        <docblock line="76">
+          <description>Override offsetUnset to throw exception, array is immutable</description>
+          <long-description>This function violates the Liskov substitution principle because PHP
+currently does not have an Immutable version of `\ArrayObject` or the
+`\ArrayAccess` interface.  It is a language construct that using
+`unset()` requires implementation of `\ArrayAccess`.  Therefore, this
+function is a "hack" until PHP implements a respective class.
+
+Also, `\ArrayAccess` is pre PHP 7 and does not use type hinting.</long-description>
+          <tag name="param" line="76" description="&lt;p&gt;The key to be removed&lt;/p&gt;" type="string" variable="$Offset">
+            <type>string</type>
+          </tag>
+          <tag name="see" line="76" description="Overriden function" link="\ArrayObject::offsetUnset"/>
+          <tag name="return" line="76" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$Offset</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="emeraldinspirations\library\applicationArchitecture" line="94" package="ApplicationArchitecture">
+        <name>withOffsetSet</name>
+        <full_name>\emeraldinspirations\library\applicationArchitecture\ImmutableArrayObject::withOffsetSet()</full_name>
+        <docblock line="94">
+          <description>Return clone with offset set (immutable version of offsetSet)</description>
+          <long-description></long-description>
+          <tag name="param" line="94" description="&lt;p&gt;The key to be updated&lt;/p&gt;" type="string" variable="$Offset">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="94" description="&lt;p&gt;The value to set it to&lt;/p&gt;" type="mixed" variable="$Value">
+            <type>mixed</type>
+          </tag>
+          <tag name="see" line="94" description="" link="\ArrayObject::offsetSet"/>
+          <tag name="return" line="94" description="The updated clone" type="\emeraldinspirations\library\applicationArchitecture\ImmutableArrayObject">
+            <type>\emeraldinspirations\library\applicationArchitecture\ImmutableArrayObject</type>
+          </tag>
+          <tag name="fluent" description="This method is part of a fluent interface and will return the same instance"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$Offset</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$Value</name>
+          <default></default>
+          <type>mixed</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="emeraldinspirations\library\applicationArchitecture" line="110" package="ApplicationArchitecture">
+        <name>withOffsetUnset</name>
+        <full_name>\emeraldinspirations\library\applicationArchitecture\ImmutableArrayObject::withOffsetUnset()</full_name>
+        <docblock line="110">
+          <description>Return clone with offset unset (immutable version of offsetUnset)</description>
+          <long-description></long-description>
+          <tag name="param" line="110" description="&lt;p&gt;The key to be removed&lt;/p&gt;" type="string" variable="$Offset">
+            <type>string</type>
+          </tag>
+          <tag name="see" line="110" description="" link="\ArrayObject::offsetUnset"/>
+          <tag name="return" line="110" description="The updated clone" type="\emeraldinspirations\library\applicationArchitecture\ImmutableArrayObject">
+            <type>\emeraldinspirations\library\applicationArchitecture\ImmutableArrayObject</type>
+          </tag>
+          <tag name="fluent" description="This method is part of a fluent interface and will return the same instance"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$Offset</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="emeraldinspirations\library\applicationArchitecture" line="128" package="ApplicationArchitecture">
+        <name>getIterator</name>
+        <full_name>\emeraldinspirations\library\applicationArchitecture\ImmutableArrayObject::getIterator()</full_name>
+        <docblock line="128">
+          <description>Return iterator</description>
+          <long-description>Function not covered in Unit Test because it is a pass-through function</long-description>
+          <tag name="codeCoverageIgnore" line="128" description="Function not covered in Unit Test because it is a&#10;                    pass-through function"/>
+          <tag name="see" line="128" description="Pass through" link="\ArrayObject::getIterator"/>
+          <tag name="return" line="128" description="" type="\Traversable">
+            <type>\Traversable</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="emeraldinspirations\library\applicationArchitecture" line="138" package="ApplicationArchitecture">
+        <name>count</name>
+        <full_name>\emeraldinspirations\library\applicationArchitecture\ImmutableArrayObject::count()</full_name>
+        <docblock line="138">
+          <description>Return count of contents</description>
+          <long-description></long-description>
+          <tag name="return" line="138" description="" type="integer">
+            <type>integer</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="emeraldinspirations\library\applicationArchitecture" line="154" package="ApplicationArchitecture">
+        <name>offsetExists</name>
+        <full_name>\emeraldinspirations\library\applicationArchitecture\ImmutableArrayObject::offsetExists()</full_name>
+        <docblock line="154">
+          <description>Return count of contents</description>
+          <long-description></long-description>
+          <tag name="param" line="154" description="&lt;p&gt;The key to verify exists&lt;/p&gt;" type="string" variable="$Offset">
+            <type>string</type>
+          </tag>
+          <tag name="codeCoverageIgnore" line="154" description="Function not covered in Unit Test because it is a&#10;                    pass-through function"/>
+          <tag name="see" line="154" description="Pass through" link="\ArrayObject::offsetExists"/>
+          <tag name="return" line="154" description="" type="boolean">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$Offset</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="emeraldinspirations\library\applicationArchitecture" line="170" package="ApplicationArchitecture">
+        <name>offsetGet</name>
+        <full_name>\emeraldinspirations\library\applicationArchitecture\ImmutableArrayObject::offsetGet()</full_name>
+        <docblock line="170">
+          <description>Return the value at the spesified offset</description>
+          <long-description></long-description>
+          <tag name="param" line="170" description="&lt;p&gt;The key to retrueve&lt;/p&gt;" type="string" variable="$Offset">
+            <type>string</type>
+          </tag>
+          <tag name="codeCoverageIgnore" line="170" description="Function not covered in Unit Test because it is a&#10;                    pass-through function"/>
+          <tag name="see" line="170" description="Pass through" link="\ArrayObject::offsetGet"/>
+          <tag name="return" line="170" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$Offset</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="emeraldinspirations\library\applicationArchitecture" line="182" package="ApplicationArchitecture">
+        <name>__construct</name>
+        <full_name>\emeraldinspirations\library\applicationArchitecture\ImmutableArrayObject::__construct()</full_name>
+        <docblock line="182">
+          <description>Create a new ImmutableArrayObject</description>
+          <long-description></long-description>
+          <tag name="param" line="182" description="&lt;p&gt;Array of data to contain&lt;/p&gt;" type="array" variable="$Array">
+            <type>array</type>
+          </tag>
+          <tag name="return" line="182" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$Array</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="emeraldinspirations\library\applicationArchitecture" line="192" package="ApplicationArchitecture">
+        <name>__clone</name>
+        <full_name>\emeraldinspirations\library\applicationArchitecture\ImmutableArrayObject::__clone()</full_name>
+        <docblock line="192">
+          <description>Clone child elements when ImmutableArrayObject is cloned</description>
+          <long-description></long-description>
+          <tag name="return" line="192" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="30" code="PPC:ERR-50007">No summary for property $ArrayObject</error>
+    </parse_markers>
+  </file>
+  <file path="RequestModelInterface.php" generated-path="RequestModelInterface.html" hash="617b37d2a4ba47ed05b0f03dc8e3e41c" package="ApplicationArchitecture">
+    <docblock line="0">
+      <description>Container for Request Model</description>
+      <long-description>PHP Version 7</long-description>
+      <tag name="category" line="0" description="Library"/>
+      <tag name="package" line="0" description="ApplicationArchitecture"/>
+      <tag name="author" line="0" description="Matthew &quot;Juniper&quot; Barlett" link="mailto:emeraldinspirations@gmail.com"/>
+      <tag name="copyright" line="0" description="2017 Matthew &quot;Juniper&quot; Barlett &lt;emeraldinspirations@gmail.com&gt;"/>
+      <tag name="license" line="0" description="MIT ../LICENSE"/>
+      <tag name="link" line="0" description="http://github.com/emeraldinspirations/lib-applicationArchitecture" link="http://github.com/emeraldinspirations/lib-applicationArchitecture"/>
+    </docblock>
+    <interface namespace="emeraldinspirations\library\applicationArchitecture" line="35" package="ApplicationArchitecture">
+      <extends>\emeraldinspirations\library\applicationArchitecture\ArrayInterface</extends>
+      <name>RequestModelInterface</name>
+      <full_name>\emeraldinspirations\library\applicationArchitecture\RequestModelInterface</full_name>
+      <docblock line="35">
+        <description>Request to the application</description>
+        <long-description>A Request Model is an array object containing all the parameters for the
+request to the application.  It is "delivery mechanism agnostic" i.e. it
+contains absolutely no information about the web or the command line or
+whatever interface is being used.  It is also locale and language agnostic,
+containing only value objects and strings.</long-description>
+        <tag name="category" line="35" description="Library"/>
+        <tag name="package" line="35" description="ApplicationArchitecture"/>
+        <tag name="author" line="35" description="Matthew &quot;Juniper&quot; Barlett" link="mailto:emeraldinspirations@gmail.com"/>
+        <tag name="copyright" line="35" description="2017 Matthew &quot;Juniper&quot; Barlett &lt;emeraldinspirations@gmail.com&gt;"/>
+        <tag name="license" line="35" description="MIT ../LICENSE"/>
+        <tag name="version" line="35" description="GIT: $Id:$ In Development."/>
+        <tag name="link" line="35" description="http://github.com/emeraldinspirations/lib-applicationArchitecture" link="http://github.com/emeraldinspirations/lib-applicationArchitecture"/>
+        <tag name="inherited_from" description="\emeraldinspirations\library\applicationArchitecture\ArrayInterface" refers="\emeraldinspirations\library\applicationArchitecture\ArrayInterface" link="/classes/emeraldinspirations.library.applicationArchitecture.ArrayInterface.html"/>
+      </docblock>
+    </interface>
+  </file>
+  <file path="DataEntityInterface.php" generated-path="DataEntityInterface.html" hash="8f59d3e88718e18333fd8773251ceeed" package="ApplicationArchitecture">
+    <docblock line="0">
+      <description>Container for DataEntityInterface</description>
+      <long-description>PHP Version 7</long-description>
+      <tag name="category" line="0" description="Library"/>
+      <tag name="package" line="0" description="ApplicationArchitecture"/>
+      <tag name="author" line="0" description="Matthew &quot;Juniper&quot; Barlett" link="mailto:emeraldinspirations@gmail.com"/>
+      <tag name="copyright" line="0" description="2017 Matthew &quot;Juniper&quot; Barlett &lt;emeraldinspirations@gmail.com&gt;"/>
+      <tag name="license" line="0" description="MIT ../LICENSE.md"/>
+      <tag name="link" line="0" description="http://github.com/emeraldinspirations/lib-applicationArchitecture" link="http://github.com/emeraldinspirations/lib-applicationArchitecture"/>
+    </docblock>
+    <interface namespace="emeraldinspirations\library\applicationArchitecture" line="29" package="ApplicationArchitecture">
+      <name>DataEntityInterface</name>
+      <full_name>\emeraldinspirations\library\applicationArchitecture\DataEntityInterface</full_name>
+      <docblock line="29">
+        <description>An object that contains the data to be manipulated by the application</description>
+        <long-description></long-description>
+        <tag name="category" line="29" description="Library"/>
+        <tag name="package" line="29" description="ApplicationArchitecture"/>
+        <tag name="author" line="29" description="Matthew &quot;Juniper&quot; Barlett" link="mailto:emeraldinspirations@gmail.com"/>
+        <tag name="copyright" line="29" description="2017 Matthew &quot;Juniper&quot; Barlett &lt;emeraldinspirations@gmail.com&gt;"/>
+        <tag name="license" line="29" description="MIT ../LICENSE.md"/>
+        <tag name="version" line="29" description="GIT: $Id$ In Development."/>
+        <tag name="link" line="29" description="http://github.com/emeraldinspirations/lib-applicationArchitecture" link="http://github.com/emeraldinspirations/lib-applicationArchitecture"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="emeraldinspirations\library\applicationArchitecture" line="37" package="ApplicationArchitecture">
+        <name>toAssocArray</name>
+        <full_name>\emeraldinspirations\library\applicationArchitecture\DataEntityInterface::toAssocArray()</full_name>
+        <docblock line="37">
+          <description>Extract data into associative array</description>
+          <long-description></long-description>
+          <tag name="return" line="37" description="" type="\emeraldinspirations\library\applicationArchitecture\AssocStringTreeInterface">
+            <type>\emeraldinspirations\library\applicationArchitecture\AssocStringTreeInterface</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="emeraldinspirations\library\applicationArchitecture" line="50" package="ApplicationArchitecture">
+        <name>withAssocArray</name>
+        <full_name>\emeraldinspirations\library\applicationArchitecture\DataEntityInterface::withAssocArray()</full_name>
+        <docblock line="50">
+          <description>Create new entity with data from associative array</description>
+          <long-description>PHP does not yet allow static functions in interfaces.  If it did, this
+function would be fromAssocArray.  "With" follows the immutable model
+and is the closest implementation that can be done in an interface.</long-description>
+          <tag name="param" line="50" description="&lt;p&gt;Data to populate new entity&lt;/p&gt;" type="\emeraldinspirations\library\applicationArchitecture\AssocStringTreeInterface" variable="$Data">
+            <type>\emeraldinspirations\library\applicationArchitecture\AssocStringTreeInterface</type>
+          </tag>
+          <tag name="return" line="50" description="New data entity" type="\emeraldinspirations\library\applicationArchitecture\DataEntityInterface">
+            <type>\emeraldinspirations\library\applicationArchitecture\DataEntityInterface</type>
+          </tag>
+          <tag name="fluent" description="This method is part of a fluent interface and will return the same instance"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$Data</name>
+          <default></default>
+          <type>\emeraldinspirations\library\applicationArchitecture\AssocStringTreeInterface</type>
+        </argument>
+      </method>
+    </interface>
+  </file>
+  <file path="EntityGatewayCollectionInterface.php" generated-path="EntityGatewayCollectionInterface.html" hash="f88ae59c289b3d9879f106ab78c0445c" package="ApplicationArchitecture">
+    <docblock line="0">
+      <description>Container for collection of EntityGateway interfaces interface</description>
+      <long-description>PHP Version 7</long-description>
+      <tag name="category" line="0" description="Library"/>
+      <tag name="package" line="0" description="ApplicationArchitecture"/>
+      <tag name="author" line="0" description="Matthew &quot;Juniper&quot; Barlett" link="mailto:emeraldinspirations@gmail.com"/>
+      <tag name="copyright" line="0" description="2017 Matthew &quot;Juniper&quot; Barlett &lt;emeraldinspirations@gmail.com&gt;"/>
+      <tag name="license" line="0" description="MIT ../LICENSE.md"/>
+      <tag name="link" line="0" description="http://github.com/emeraldinspirations/lib-applicationArchitecture" link="http://github.com/emeraldinspirations/lib-applicationArchitecture"/>
+    </docblock>
+    <interface namespace="emeraldinspirations\library\applicationArchitecture" line="29" package="ApplicationArchitecture">
+      <name>EntityGatewayCollectionInterface</name>
+      <full_name>\emeraldinspirations\library\applicationArchitecture\EntityGatewayCollectionInterface</full_name>
+      <docblock line="29">
+        <description>Collection of EntityGateway interfaces interface</description>
+        <long-description></long-description>
+        <tag name="category" line="29" description="Library"/>
+        <tag name="package" line="29" description="ApplicationArchitecture"/>
+        <tag name="author" line="29" description="Matthew &quot;Juniper&quot; Barlett" link="mailto:emeraldinspirations@gmail.com"/>
+        <tag name="copyright" line="29" description="2017 Matthew &quot;Juniper&quot; Barlett &lt;emeraldinspirations@gmail.com&gt;"/>
+        <tag name="license" line="29" description="MIT ../LICENSE.md"/>
+        <tag name="version" line="29" description="GIT: $Id$ In Development."/>
+        <tag name="link" line="29" description="http://github.com/emeraldinspirations/lib-applicationArchitecture" link="http://github.com/emeraldinspirations/lib-applicationArchitecture"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="emeraldinspirations\library\applicationArchitecture" line="39" package="ApplicationArchitecture">
+        <name>getGateway</name>
+        <full_name>\emeraldinspirations\library\applicationArchitecture\EntityGatewayCollectionInterface::getGateway()</full_name>
+        <docblock line="39">
+          <description>Return object implementing EntryGateway interface per interface name</description>
+          <long-description></long-description>
+          <tag name="param" line="39" description="&lt;p&gt;Interface Name of the EntryGateway&lt;/p&gt;" type="string" variable="$GatewayName">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="39" description="" type="\emeraldinspirations\library\applicationArchitecture\EntityGatewayInterface">
+            <type>\emeraldinspirations\library\applicationArchitecture\EntityGatewayInterface</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$GatewayName</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+    </interface>
+  </file>
+  <package name="ApplicationArchitecture" full_name="ApplicationArchitecture"/>
+  <package name="Default" full_name="Default"/>
+  <package name="global" full_name="global"/>
+  <namespace name="emeraldinspirations" full_name="emeraldinspirations">
+    <namespace name="library" full_name="emeraldinspirations\library">
+      <namespace name="applicationArchitecture" full_name="emeraldinspirations\library\applicationArchitecture"/>
+    </namespace>
+  </namespace>
+  <deprecated count="0"/>
+</project>

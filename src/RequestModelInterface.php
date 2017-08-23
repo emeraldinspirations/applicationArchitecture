@@ -16,19 +16,13 @@
 namespace emeraldinspirations\library\applicationArchitecture;
 
 /**
- * The request data from CLI or HTTP request
+ * Request to the application
  *
- * A Request Model is an object containing all the information about the
- * HTTP or CLI request.  The Request Model is then passed through several
- * stages:
- * * The respective Common Entry Point (cep) script creates the inital Request
- *   Object and populates the Boundry property
- * * The config script populates the various settings and entity gateways
- * * A Request Parser populates the details of the request
- *
- * At each stage above a new derived immutable object is created including the
- * additinal data.  Once fully populated, the Request Model is then used as a
- * parameter of the __invoke() function of the requested Interactor
+ * A Request Model is an array object containing all the parameters for the
+ * request to the application.  It is "delivery mechanism agnostic" i.e. it
+ * contains absolutely no information about the web or the command line or
+ * whatever interface is being used.  It is also locale and language agnostic,
+ * containing only value objects and strings.  
  *
  * @category  Library
  * @package   ApplicationArchitecture
@@ -38,7 +32,7 @@ namespace emeraldinspirations\library\applicationArchitecture;
  * @version   GIT: $Id:$ In Development.
  * @link      http://github.com/emeraldinspirations/lib-applicationArchitecture
  */
-interface RequestModelInterface
+interface RequestModelInterface extends ArrayInterface
 {
 
 }
