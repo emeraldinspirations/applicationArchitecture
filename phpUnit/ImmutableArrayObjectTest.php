@@ -60,11 +60,10 @@ class ImmutableArrayObjectTest extends \PHPUnit_Framework_TestCase
         );
 
         $this->assertInstanceOf(
-            \ArrayObject::class,
+            ArrayInterface::class,
             $this->Object,
-            'Fails if class does not extend ArrayObject'
+            'Fails if class does not extend ArrayInterface'
         );
-
     }
 
     /**
@@ -167,6 +166,65 @@ class ImmutableArrayObjectTest extends \PHPUnit_Framework_TestCase
     {
 
         unset($this->Object[self::KEY_CHANGED]);
+
+    }
+
+    /**
+     * Verify Traversable
+     *
+     * @return void
+     */
+    public function testIteration()
+    {
+        $this->assertInstanceOf(
+            \Traversable::class,
+            $this->Object->getIterator(),
+            'Fails if getIterator returns non \\Traversable'
+        );
+    }
+
+    /**
+     * Verify object returns corect count
+     *
+     * @return void
+     */
+    public function testCount()
+    {
+
+        $this->assertTrue(
+            is_integer($this->Object->count()),
+            'Fails if count returns non integer'
+        );
+
+        $this->assertEquals(
+            2,
+            $this->Object->count(),
+            'Fails if wrong count returned'
+        );
+
+        $Clone = $this->Object->withOffsetSet('ThirdKey', 'ThirdValue');
+
+        $this->assertEquals(
+            3,
+            $Clone->count(),
+            'Fails if count hard-coded'
+        );
+    }
+
+    /**
+     * Verify object clones all child elements
+     *
+     * @return void
+     */
+    public function testClone()
+    {
+        $Clone = $this->Object->withOffsetSet('ThirdKey', 'ThirdValue');
+
+        $this->assertEquals(
+            2,
+            count($this->Object),
+            'Fails if __clone does not clone internal \\ArrayObject'
+        );
 
     }
 

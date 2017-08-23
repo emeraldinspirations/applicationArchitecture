@@ -24,8 +24,10 @@ namespace emeraldinspirations\library\applicationArchitecture;
  * @version  GIT: $Id$ In Development.
  * @link     https://github.com/emeraldinspirations/lib-applicationArchitecture
  */
-class ImmutableArrayObject extends \ArrayObject
+class ImmutableArrayObject implements ArrayInterface
 {
+
+    protected $ArrayObject;
 
     /**
      * Override offsetSet to throw exception, array is immutable
@@ -91,9 +93,9 @@ class ImmutableArrayObject extends \ArrayObject
      */
     public function withOffsetSet(string $Offset, $Value) : self
     {
-        $Return = $this->getArrayCopy();
-        $Return[$Offset] = $Value;
-        return new self($Return);
+        $Return = clone $this;
+        $Return->ArrayObject[$Offset] = $Value;
+        return $Return;
     }
 
     /**
@@ -107,9 +109,89 @@ class ImmutableArrayObject extends \ArrayObject
      */
     public function withOffsetUnset(string $Offset) : self
     {
-        $Return = $this->getArrayCopy();
-        unset($Return[$Offset]);
-        return new self($Return);
+        $Return = clone $this;
+        unset($Return->ArrayObject[$Offset]);
+        return $Return;
+    }
+
+    /**
+     * Return iterator
+     *
+     * Function not covered in Unit Test because it is a pass-through function
+     *
+     * @codeCoverageIgnore Function not covered in Unit Test because it is a
+     *                     pass-through function
+     * @see                \ArrayObject::getIterator Pass through
+     *
+     * @return \Traversable
+     */
+    public function getIterator()
+    {
+        return $this->ArrayObject->getIterator();
+    }
+
+    /**
+     * Return count of contents
+     *
+     * @return integer
+     */
+    public function count()
+    {
+        return $this->ArrayObject->count();
+    }
+
+    /**
+     * Return count of contents
+     *
+     * @param string $Offset The key to verify exists
+     *
+     * @codeCoverageIgnore Function not covered in Unit Test because it is a
+     *                     pass-through function
+     * @see                \ArrayObject::offsetExists Pass through
+     *
+     * @return bool
+     */
+    public function offsetExists($Offset)
+    {
+        return $this->ArrayObject->offsetExists($Offset);
+    }
+
+    /**
+     * Return the value at the spesified offset
+     *
+     * @param string $Offset The key to retrueve
+     *
+     * @codeCoverageIgnore Function not covered in Unit Test because it is a
+     *                     pass-through function
+     * @see                \ArrayObject::offsetGet Pass through
+     *
+     * @return mixed
+     */
+    public function offsetGet($Offset)
+    {
+        return $this->ArrayObject->offsetGet($Offset);
+    }
+
+    /**
+     * Create a new ImmutableArrayObject
+     *
+     * @param array $Array Array of data to contain
+     *
+     * @return void
+     */
+    public function __construct(array $Array)
+    {
+        $this->ArrayObject = new \ArrayObject($Array);
+    }
+
+    /**
+     * Clone child elements when ImmutableArrayObject is cloned
+     *
+     * @return void
+     */
+    public function __clone()
+    {
+        $this->ArrayObject = clone $this->ArrayObject;
     }
 
 }
