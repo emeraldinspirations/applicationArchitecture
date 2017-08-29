@@ -194,4 +194,14 @@ class ImmutableArrayObject implements ArrayInterface
         $this->ArrayObject = clone $this->ArrayObject;
     }
 
+    /**
+     * Return a copy of the ArrayObject as an array
+     *
+     * @return array
+     */
+    public function getArrayCopy() : array
+    {
+        return $this->ArrayObject->getArrayCopy();
+    }
+
 }

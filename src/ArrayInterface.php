@@ -35,5 +35,10 @@ namespace emeraldinspirations\library\applicationArchitecture;
  */
 interface ArrayInterface extends \IteratorAggregate, \Countable, \ArrayAccess
 {
-
+    /**
+     * Return a copy of the ArrayObject as an array
+     *
+     * @return array
+     */
+    function getArrayCopy() : array;
 }

@@ -228,4 +228,23 @@ class ImmutableArrayObjectTest extends \PHPUnit_Framework_TestCase
 
     }
 
+    /**
+     * Verify returns array that matches construct array
+     *
+     * @return void
+     */
+    public function testGetArrayCopy()
+    {
+
+        $this->assertEquals(
+            [
+                self::KEY_MAINTAINED => 'ValueMaintained',
+                self::KEY_CHANGED    => 'OriginalValue',
+            ],
+            $this->Object->getArrayCopy(),
+            'Fails if function undefined, or returns wrong value'
+        );
+
+    }
+
 }
